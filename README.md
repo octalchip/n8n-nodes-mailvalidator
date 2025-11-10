@@ -9,7 +9,7 @@ A powerful custom n8n node that validates emails from Google Sheets, updates the
 - ✅ **Real-time Updates** - Updates sheet status immediately as emails are validated
 - ✅ **Batch Processing** - Processes emails in batches with automatic delays for optimal performance
 - ✅ **Credit Management** - Automatically processes validation results and manages credits via API
-- ✅ **Dual Authentication** - Supports both JWT Bearer Token and API Key authentication
+- ✅ **API Key Authentication** - Secure authentication using API Key
 - ✅ **Error Handling** - Graceful error handling with detailed status tracking
 - ✅ **Custom Icon** - Beautiful custom icon matching your brand
 
@@ -84,13 +84,7 @@ When configuring the Email Validator node, you'll be asked for two credentials. 
 2. Click **"Create New Credential"** or select an existing one
 3. Choose **"Email Validator API"** from the credential type dropdown
 4. Configure the credential:
-   - **Authentication Type:** Choose either:
-     - **JWT Bearer Token** - Use your Supabase Auth JWT token
-     - **API Key** - Use your API key (format: `evapi_...`)
-   - **JWT Bearer Token** (if using Bearer): Paste your JWT token from Supabase Auth
-     - Format: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
-     - Get it from: Your Supabase Auth session or your application
-   - **API Key** (if using API Key): Paste your API key
+   - **API Key:** Paste your API key
      - Format: `evapi_...`
      - Get it from: Your account settings in the Email Validator dashboard
 5. Click **"Save"**
@@ -239,7 +233,7 @@ The node updates the status column with one of these values:
 - ✅ Verify the `dist/` folder exists after build
 
 ### Credential errors
-- ✅ **"Invalid authentication token"** - Check your JWT token or API key is correct
+- ✅ **"Invalid authentication token"** - Check your API key is correct
 - ✅ **"Google Sheets authentication failed"** - Re-authenticate your Google Sheets OAuth2 credentials
 - ✅ Ensure credentials are in the correct order (Email Validator API first, Google Sheets second)
 
@@ -273,14 +267,9 @@ The node updates the status column with one of these values:
 
 ## 🔐 Authentication
 
-The node supports two authentication methods:
+The node uses API Key authentication:
 
-### 1. JWT Bearer Token (Recommended)
-- **Format:** `Bearer <your-jwt-token>`
-- **Where to get it:** From your Supabase Auth session
-- **Example:** `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
-
-### 2. API Key
+### API Key
 - **Format:** `ApiKey <your-api-key>`
 - **Where to get it:** From your Email Validator account settings
 - **Example:** `ApiKey evapi_1234567890abcdef`
