@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-mailvalidator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validate emails from Google Sheets with comprehensive validation and real-time status updates",
   "keywords": [
     "n8n-community-node-package",
