@@ -1,0 +1,58 @@
+{
+  "name": "n8n-nodes-mailvalidator",
+  "version": "1.0.1",
+  "description": "Validate emails from Google Sheets with comprehensive validation and real-time status updates",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "email",
+    "validation",
+    "email-validator",
+    "google-sheets",
+    "email-verification",
+    "email-check"
+  ],
+  "license": "MIT",
+  "homepage": "https://mailvalidator.octalchip.com",
+  "author": {
+    "name": "Octalchip",
+    "url": "https://www.octalchip.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octalchip/mail-validator-workflow-nodes.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint \"nodes/**/*.ts\" \"credentials/**/*.ts\"",
+    "lintfix": "eslint \"nodes/**/*.ts\" \"credentials/**/*.ts\" --fix",
+    "prepublishOnly": "npm run build && npm run lint -s"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/EmailValidator/EmailValidator.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/EmailValidatorApi/EmailValidatorApi.credentials.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.4",
+    "gulp": "^5.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "n8n-workflow": "^1.17.0"
+  }
+}
